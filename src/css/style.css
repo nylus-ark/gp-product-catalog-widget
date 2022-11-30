@@ -1,0 +1,58 @@
+/* Catalog container */
+
+.catalog {
+    background-color: #f1f1f1;
+}
+
+/* Catalog tab */
+
+.catalog__categories {
+    display: flex;
+}
+
+/* Catalog tab-links */
+
+.catalog__categories-btn {
+    background-color: #dfdfdf;
+    border: 2px solid #808080;
+    border-bottom: 0;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    padding: 5px 7px;
+    margin: 5px 4px 0;
+}
+
+.catalog__categories-btn:hover,
+.catalog__categories-btn:active,
+.catalog__categories-btn:focus {
+    background-color: #fff;
+}
+
+/* Catalog content */
+
+.catalog__content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: hidden;
+    background-color: #fff;
+    border: 2px solid #808080;
+    width: 100%;
+    height: 300px;
+    margin: 0 0 5px;
+    padding: 15px;
+    gap: 10px 20px;
+}
+
+/* Product cards */
+
+.product {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 2px solid #808080;
+    width: 100%;
+    max-width: 60px;
+    height: 60px;
+    gap: 5px
+}
