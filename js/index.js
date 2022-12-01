@@ -51,7 +51,7 @@ categoryTabs.forEach((tab) => {
             const createProduct = () => {
                 const productItem = `
                     <li class="product">
-                        <img src="/img/tovar.jpg" alt="${product.productName}">
+                        <img src="img/tovar.jpg" alt="${product.productName}">
                         <span>${product.productName}</span>
                     </li>
                 `;
