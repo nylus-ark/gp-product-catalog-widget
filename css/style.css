@@ -47,6 +47,7 @@
 
 .catalog__categories-item {
     border-bottom: 2px solid #808080;
+    margin: 5px 4px 0;
 }
 
 .catalog__categories-item:last-child {
@@ -68,16 +69,21 @@
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
     padding: 5px 7px;
-    margin: 5px 4px 0;
 }
 
-.catalog__btn:hover,
-.catalog__btn:active,
-.catalog__btn:focus {
+.catalog__btn:hover {
+    background-color: #bbb;
+}
+
+.catalog__btn--is-active {
     background-color: #fff;
 }
 
 /* Catalog vertical open tab button */
+
+.catalog__tab-btn {
+    margin: 5px 4px 0;
+}
 
 @media (min-width: 768px) {
     .catalog__tab-btn {
