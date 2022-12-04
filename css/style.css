@@ -77,6 +77,8 @@
 
 .catalog__btn--is-active {
     background-color: #fff;
+    cursor: default;
+    pointer-events: none;
 }
 
 /* Catalog vertical open tab button */
