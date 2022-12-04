@@ -7,7 +7,7 @@ categoriesBtn?.addEventListener('click', (evt) => {
     const tab = document.getElementById(tabId);
 
     tab?.classList.toggle('catalog__container--is-visible');
-})
+});
 
 const mediaQueryList = window.matchMedia('(min-width: 768px)');
 
@@ -25,12 +25,17 @@ const categoryContent = document.querySelector('.catalog__categories');
 
 // Рендер категорий
 const renderCategoryList = () => {
-    const categoryItem = categories.map((value) => {
+    const categoryItem = categories?.map((value) => {
         let active = (value.categoryId === 1) ? 'catalog__btn--is-active' : '';
 
         return `
             <li class="catalog__categories-item">
-                <button type="button" class="catalog__btn js-tabBtn ${active}" data-id="${value.categoryId}" title="${value.categoryName}">${value.categoryName}</button>
+                <button class="catalog__btn js-tabBtn ${active}" 
+                    type="button" 
+                    data-id="${value.categoryId}" 
+                    title="${value.categoryName}">
+                    ${value.categoryName}
+                </button>
             </li>
         `;
     }).join('');
@@ -47,7 +52,7 @@ const categoryTabs = document.querySelectorAll('.js-tabBtn');
 const renderProductList = (id) => {
     let productList = '';
 
-    products.forEach((product) => {
+    products?.forEach((product) => {
         const createProduct = () => {
             const productItem = `
                 <li class="product">
@@ -64,17 +69,20 @@ const renderProductList = (id) => {
         }
 
         return;
-    })
+    });
 
     catalogContent.innerHTML = productList;
 };
 
 categoryTabs.forEach((tab) => {
-    // Рендер товаров при загрузке страницы в начальной категории
+    // Рендер товаров в первой категории при загрузке страницы
     const initialProductId = tab.dataset?.id;
-    renderProductList(initialProductId);
 
-    // Рендер товаров при нажатии на категорию
+    if (Number(initialProductId) === 1) {
+        renderProductList(initialProductId);
+    }
+
+    // Рендер товаров при клике на каждую категорию
     tab.addEventListener('click', (evt) => {
         const activeTab = document.querySelector('.catalog__btn.catalog__btn--is-active');
         const currentTab = evt.target;
@@ -84,5 +92,5 @@ categoryTabs.forEach((tab) => {
 
         const productId = evt.target.dataset.id;
         renderProductList(productId);
-    })
+    });
 });
